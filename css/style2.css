@@ -1,13 +1,20 @@
+.main-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Giới thiệu */
 :root {
-    --primary-blue: #007bff;
-    /* Adjust as per exact blue in image */
-    --secondary-yellow: #ffc107;
-    /* Adjust as per exact yellow in image */
-    --text-color: #333;
-    --light-gray: #f8f9fa;
+    --primary-pink: #ff69b4;
+    /* A vibrant pink, adjust as needed */
+    --dark-header: #333;
+    /* Dark color for the header background */
+    --text-color: #fff;
+    /* White text for contrast on dark background */
+    --light-text-color: #555;
+    /* For addresses */
     --white: #fff;
     --font-roboto: 'Roboto', sans-serif;
-    --font-montserrat: 'Montserrat', sans-serif;
 }
 
 body {
@@ -15,195 +22,246 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--text-color);
-    background-color: var(--white);
+    background-color: var(--primary-pink);
+    /* Main background color */
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     min-height: 100vh;
 }
 
-.header-section {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: var(--light-gray);
-    /* Background for header area if any */
-    width: 100%;
-}
-
-.main-title {
-    font-family: var(--font-montserrat);
-    /* Assuming a bolder, more prominent font */
-    font-size: 2.2em;
-    color: var(--primary-blue);
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.sub-title {
-    font-family: var(--font-montserrat);
-    font-size: 3em;
-    color: var(--secondary-yellow);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 0;
-}
-
-.content-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px 20px;
-    max-width: 1200px;
-    /* Limit content width */
-    width: 100%;
-    gap: 40px;
-    /* Space between columns */
-    flex-wrap: wrap;
-    /* Allow wrapping on smaller screens */
-}
-
-.left-column {
-    flex: 2;
-    /* Takes more space */
-    min-width: 300px;
-    max-width: 600px;
-}
-
-.intro-text {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    text-align: justify;
-}
-
-.quote-block {
-    background-color: #e6f7ff;
-    /* Light blue background for quote */
-    border-left: 5px solid var(--primary-blue);
-    padding: 15px 20px;
-    margin-bottom: 30px;
-    font-style: italic;
-    color: #555;
-    font-size: 1.05em;
-}
-
-.quote-block p {
-    margin: 5px 0;
-}
-
-.contact-info {
-    margin-top: 40px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.contact-title {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    color: var(--primary-blue);
-}
-
-.contact-info p {
-    margin: 5px 0;
-    line-height: 1.5;
-}
-
-.right-column {
-    flex: 1;
-    /* Takes less space */
-    min-width: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.image-card {
+.introduce-section {
     background-color: var(--white);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 350px;
-    /* Max width for the card */
+}
+
+.introduce-header {
     text-align: center;
+    padding: 20px 0;
+    /* Khoảng cách trên và dưới */
 }
 
-.image-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+.introduce-header h1 {
+    font-size: 2em;
+    color: #0A192F;
+
+    /* Main title color */
+    margin: 0;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    /* Bolder font for the main title */
 }
 
-.card-text {
+.introduce-header h2 {
+    font-size: 2.5em;
+    color: #FFFF00;
+    /* Main title color */
+    margin: 0;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    /* Bolder font for the main title */
+}
+
+.introduce-header h3 {
+    font-size: 1.15em;
+    color: #FFFF00;
+    /* Main title color */
+    margin: 0;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    /* Bolder font for the main title */
+}
+
+.introduce-section {
     padding: 20px;
 }
 
-.card-title {
-    font-weight: bold;
-    color: var(--primary-blue);
-    margin-bottom: 5px;
-    font-size: 1.1em;
+.introduce-content {
+    position: relative;
+    /* Quan trọng: Tạo bối cảnh định vị cho các p con */
+    width: 100%;
+    /* Chiều rộng cho vùng chứa các đoạn văn */
+    height: 100%;
+    /* Chiều cao cho vùng chứa, cần đủ lớn để chứa các đoạn chồng */
+    margin: 50px auto;
+    /* Căn giữa container */
+    border: 1px dashed #ccc;
+    /* Để dễ hình dung vùng chứa */
+    overflow: hidden;
+    /* Ẩn đi phần văn bản tràn ra ngoài container */
 }
 
-.card-subtitle {
-    font-weight: bold;
-    color: var(--text-color);
+.introduce-content p {
+    padding: 15px;
+    /* Khoảng đệm bên trong đoạn văn */
+    line-height: 1.6;
+    /* Chiều cao dòng để dễ đọc */
+    font-size: 1.15em;
+    box-sizing: border-box;
+    /* Đảm bảo padding không làm tăng tổng kích thước */
+    /* Mặc định, p sẽ chiếm 100% chiều rộng của cha */
+    width: 100%;
+    /* Đảm bảo đoạn văn chiếm đủ chiều rộng */
+}
+
+.introduce-image {
+    float: right;
+    /* Đẩy ảnh sang trái */
+    width: 400px;
+    /* Đặt chiều rộng cho ảnh */
+    height: auto;
+    /* Giữ tỷ lệ */
+    margin-right: 15px;
+    /* Khoảng cách giữa ảnh và văn bản bên phải */
     margin-bottom: 10px;
-    font-size: 1.2em;
+    /* Khoảng cách dưới ảnh */
 }
 
-.card-description {
-    font-size: 0.95em;
-    line-height: 1.5;
-    color: #666;
+.address-list {
+    list-style: none;
+    margin: 50px auto;
+    /* Căn giữa container */
+    border: 1px dashed #ccc;
+    /* Để dễ hình dung vùng chứa */
+}
+
+.address-list a {
+    display: block;
+    /* Thẻ a sẽ tự động xuống dòng */
+    margin-bottom: 10px;
+    /* Tùy chọn: tạo khoảng cách giữa các link */
+    margin-bottom: 10px;
+    /* Khoảng cách giữa các địa chỉ */
+    font-size: 1.1em;
+    /* Kích thước chữ cho địa chỉ */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    /* Limit content width */
+    padding: 0 20px;
+    /* Horizontal padding */
+}
+
+.header {
+    background-color: var(--dark-header);
+    /* Dark header background */
+    color: var(--white);
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1.5px;
+}
+
+.location-section {
+    background-color: var(--white);
+    /* White background for each location section */
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Center align text within the section */
+}
+
+.location-title {
+    color: var(--dark-header);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.address {
+    color: var(--light-text-color);
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive grid for images */
+    gap: 20px;
+    /* Space between images */
+    justify-items: center;
+    /* Center images in their grid cells */
+}
+
+.gallery-item {
+    width: 100%;
+    max-width: 350px;
+    /* Max width for individual images */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for images, adjust as needed */
+    object-fit: cover;
+    /* Ensures images cover the area without distortion */
+    display: block;
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    /* Slightly zoom on hover */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .content-section {
-        flex-direction: column;
-        align-items: center;
+    .header h1 {
+        font-size: 2em;
     }
 
-    .left-column,
-    .right-column {
-        max-width: 100%;
-        width: 100%;
-        margin-bottom: 30px;
+    .location-title {
+        font-size: 1.5em;
     }
 
-    .header-section {
-        padding: 30px 15px;
+    .address {
+        font-size: 1em;
     }
 
-    .main-title {
-        font-size: 1.8em;
-    }
-
-    .sub-title {
-        font-size: 2.5em;
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
 @media (max-width: 480px) {
-    .main-title {
-        font-size: 1.5em;
+    .header h1 {
+        font-size: 1.8em;
     }
 
-    .sub-title {
-        font-size: 2em;
+    .location-section {
+        padding: 15px;
+        margin-bottom: 20px;
     }
 
-    .intro-text,
-    .quote-block p,
-    .contact-info p,
-    .card-text p {
-        font-size: 0.95em;
+    .image-gallery {
+        grid-template-columns: 1fr;
+        /* Single column on very small screens */
+    }
+
+    .gallery-item {
+        max-width: 90%;
+        /* Adjust for better fit on small screens */
+        margin: 0 auto;
+        /* Center single image items */
     }
 }
 
+/* Giới thiệu */
+/* Cơ sở vật chất */
 :root {
     --primary-pink: #ff69b4;
     /* A vibrant pink, adjust as needed */
@@ -355,12 +413,14 @@ body {
     }
 }
 
+/* Cơ sở vật chất */
+/* Dịch vụ */
 :root {
     --primary-orange: #ffa500;
     /* A vibrant orange, adjust as needed */
     --light-gray-bg: #f8f8f8;
     /* Light background color */
-    --text-color: #333;
+    --text-color: #0A192F;
     --heading-color: #555;
     /* Darker color for section headings */
     --link-color: #007bff;
@@ -382,22 +442,37 @@ body {
     min-height: 100vh;
 }
 
-.container {
+.service-content {
+    background-color: #fff;
+}
+
+.container-service {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1500px;
     /* Max width for content */
     padding: 40px 20px;
 }
 
-.page-header {
+.service-header {
     text-align: center;
     margin-bottom: 50px;
     padding: 20px 0;
+
 }
 
-.page-header h1 {
-    font-size: 2.8em;
-    color: var(--primary-orange);
+.service-header h1 {
+    font-size: 2.5em;
+    color: #ffa500;
+    /* Main title color */
+    margin: 0;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    /* Bolder font for the main title */
+}
+
+.service-header h2 {
+    font-size: 2em;
+    color: #ffa500;
     /* Main title color */
     margin: 0;
     letter-spacing: 1.5px;
@@ -405,7 +480,7 @@ body {
     /* Bolder font for the main title */
 }
 
-.course-section {
+.service-section {
     display: flex;
     flex-wrap: wrap;
     /* Allow wrapping on smaller screens */
@@ -413,49 +488,48 @@ body {
     /* Align items to the top */
     background-color: var(--white);
     padding: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    width: 100%;
 }
 
-.course-section:nth-child(even) .course-image {
+.service-section h2 {
+    font-size: 1.5em;
+    color: #ff69b4;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.service-section:nth-child(even) .service-image {
     order: -1;
     /* For alternating image and text order */
     margin-right: 30px;
     margin-left: 0;
 }
 
-.course-section:nth-child(odd) .course-image {
+.service-section:nth-child(odd) .service-image {
     margin-left: 30px;
     margin-right: 0;
 }
 
-
-.course-content {
+.service-course-content {
     flex: 2;
     /* Takes more space */
     min-width: 300px;
     /* Minimum width before wrapping */
 }
 
-.course-title {
-    font-size: 1.6em;
-    color: var(--primary-orange);
-    /* Course title color */
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.course-content p {
+.service-course-content p {
+    color: #0A192F;
     line-height: 1.6;
     margin-bottom: 15px;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .objectives-title {
-    font-size: 1.2em;
-    color: var(--heading-color);
+    font-size: 1.5em;
+    color: #ff69b4;
     margin-top: 25px;
     margin-bottom: 10px;
 }
@@ -470,9 +544,10 @@ body {
 .objectives-list li {
     margin-bottom: 8px;
     line-height: 1.5;
+    font-size: 1.2em;
 }
 
-.course-image {
+.service-image {
     flex: 1;
     /* Takes less space */
     min-width: 250px;
@@ -484,7 +559,7 @@ body {
     align-items: center;
 }
 
-.course-image img {
+.service-image img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -499,11 +574,11 @@ body {
         padding: 20px 15px;
     }
 
-    .page-header h1 {
-        font-size: 2.2em;
+    .service-header h1 {
+        font-size: 1.5em;
     }
 
-    .course-section {
+    .service-section {
         flex-direction: column;
         /* Stack content vertically */
         align-items: center;
@@ -511,8 +586,8 @@ body {
         padding: 20px;
     }
 
-    .course-section:nth-child(even) .course-image,
-    .course-section:nth-child(odd) .course-image {
+    .service-section:nth-child(even) .service-image,
+    .service-section:nth-child(odd) .service-image {
         order: unset;
         /* Reset order */
         margin-right: 0;
@@ -521,13 +596,13 @@ body {
         /* Add space above image */
     }
 
-    .course-content {
+    .service-course-content {
         min-width: unset;
         width: 100%;
         /* Take full width */
     }
 
-    .course-image {
+    .service-image {
         min-width: unset;
         width: 100%;
         /* Take full width */
@@ -537,7 +612,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .page-header h1 {
+    .service-header h1 {
         font-size: 1.8em;
     }
 
@@ -545,7 +620,7 @@ body {
         font-size: 1.4em;
     }
 
-    .course-content p,
+    .service-course-content p,
     .objectives-list li {
         font-size: 0.95em;
     }
@@ -555,6 +630,8 @@ body {
     }
 }
 
+/* Dịch vụ */
+/* Tuyển dụng */
 :root {
     --primary-pink: #ff69b4;
     /* Adjust to exact pink from image */
@@ -573,32 +650,33 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--primary-pink);
+    background-color: #fff;
     color: var(--text-color);
     display: flex;
     justify-content: center;
     min-height: 100vh;
 }
 
-.container {
+.job {
     width: 100%;
-    max-width: 900px;
+    max-width: 1800px;
     /* Adjust based on preferred content width */
     padding: 40px 20px;
 }
 
-.page-header {
+.job-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.page-header h1 {
+.job-header h1 {
     font-size: 2.5em;
-    color: var(--accent-yellow);
+    color: #ffa500;
     /* Main title color */
     margin: 0;
     letter-spacing: 1.5px;
     font-weight: 700;
+    text-align: left;
 }
 
 .general-info {
@@ -607,7 +685,7 @@ body {
     margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    text-align: center;
+    text-align: left;
     /* Center align text */
 }
 
@@ -645,39 +723,6 @@ body {
     text-decoration: underline;
 }
 
-.job-listing {
-    margin-bottom: 30px;
-}
-
-.job-card {
-    background-color: var(--card-background);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    /* Ensures image corners are rounded */
-}
-
-.job-card-header {
-    position: relative;
-    text-align: center;
-    background-color: #f0f0f0;
-    /* Light background for header */
-    padding-top: 20px;
-    /* Space above image/tag */
-}
-
-.recruitment-tag {
-    background-color: var(--accent-yellow);
-    color: var(--text-color);
-    /* Could be dark text for contrast */
-    padding: 5px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.1em;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
 .job-image {
     max-width: 100%;
     height: auto;
@@ -688,135 +733,30 @@ body {
     /* Space below image */
 }
 
-.job-card-content {
-    padding: 30px;
-}
-
-.job-title {
-    font-size: 1.8em;
-    color: var(--heading-color);
-    margin-top: 0;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.job-subtitle {
-    font-size: 1em;
-    color: var(--light-text-color);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.job-details {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
-    /* Allow wrapping on smaller screens */
-    margin-bottom: 20px;
-}
-
-.job-col {
-    flex: 1;
-    min-width: 250px;
-    /* Minimum width for columns */
-}
-
-.job-col h3 {
-    font-size: 1.2em;
-    color: var(--heading-color);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.job-col ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0;
-}
-
-.job-col ul li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-    font-size: 0.95em;
-}
-
-.job-meta {
-    border-top: 1px dashed #eee;
-    padding-top: 20px;
-    margin-top: 20px;
-    text-align: center;
-    color: var(--light-text-color);
-    font-size: 0.95em;
-}
-
-.job-meta p {
-    margin: 5px 0;
-}
-
-.apply-info {
-    text-align: center;
-    margin-top: 25px;
-    font-size: 1.1em;
-    color: var(--light-text-color);
-}
-
-.apply-info p {
-    margin: 5px 0;
-}
-
-.apply-info .email-link {
-    font-weight: bold;
-    color: var(--link-color);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .page-header h1 {
+    .job-header h1 {
         font-size: 2em;
     }
 
-    .general-info,
-    .job-card {
+    .general-info {
         padding: 20px;
-    }
-
-    .job-details {
-        flex-direction: column;
-        /* Stack columns */
-        align-items: center;
-    }
-
-    .job-col {
-        min-width: unset;
-        width: 100%;
-        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .page-header h1 {
+    .job-header h1 {
         font-size: 1.8em;
     }
 
     .general-info p,
-    .general-info ul li,
-    .job-col ul li {
+    .general-info ul li {
         font-size: 0.9em;
-    }
-
-    .recruitment-tag {
-        font-size: 1em;
-        padding: 4px 10px;
-    }
-
-    .job-title {
-        font-size: 1.6em;
     }
 }
 
+/* Tuyển dụng */
+/* Liên hệ */
 :root {
     --primary-pink: #ff69b4;
     /* Adjust to exact pink from image */
@@ -844,21 +784,21 @@ body {
     min-height: 100vh;
 }
 
-.container {
+.contact {
     width: 100%;
-    max-width: 900px;
+    max-width: 1800px;
     /* Adjust based on preferred content width */
     padding: 40px 20px;
 }
 
-.page-header {
-    text-align: center;
+.contact-header {
+    text-align: left;
     margin-bottom: 40px;
 }
 
-.page-header h1 {
+.contact-header h1 {
     font-size: 2.5em;
-    color: var(--text-color);
+    color: #ff69b4;
     /* White text for main title */
     margin: 0;
     letter-spacing: 1.5px;
@@ -869,36 +809,44 @@ body {
     margin-bottom: 50px;
 }
 
+.contact1 {
+    width: 100%;
+    height: 100%;
+}
+
 .contact-item {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
-    font-size: 1.15em;
+    background-color: #fff;
+    padding: 15px 20px;
+    /* Điều chỉnh padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    /* Khoảng cách giữa các mục email */
+    min-width: 300px;
+    /* Đảm bảo độ rộng tối thiểu */
 }
 
-.contact-item i {
-    font-size: 1.5em;
-    /* Icon size */
-    margin-right: 20px;
-    color: var(--text-color);
-    /* White icon color */
-    width: 30px;
-    /* Fixed width for alignment */
-    text-align: center;
+.contact-text {
+    padding-left: 50px;
+    text-align: left;
 }
 
 .contact-text p {
+
+    color: #000;
+    text-decoration: none;
     margin: 0;
     line-height: 1.4;
 }
 
 .contact-text a {
-    color: var(--link-color);
-    text-decoration: none;
-}
 
-.contact-text a:hover {
-    text-decoration: underline;
+    color: #000;
+    text-decoration: none;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .map-section {
@@ -985,3 +933,550 @@ body {
         font-size: 1.4em;
     }
 }
+
+/* Liên hệ */
+/* Tài Nguyên Trung Tâm */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+.resources {
+    flex-wrap: wrap;
+    /* Cho phép các thẻ tự động xuống dòng khi không đủ chỗ */
+    justify-content: center;
+    /* Căn giữa các thẻ theo chiều ngang */
+    align-items: flex-start;
+    /* Đảm bảo các thẻ bắt đầu từ phía trên của container */
+    gap: 20px;
+    padding: 5px;
+}
+
+.card-tn-link {
+    text-decoration: none;
+    /* Removes underline from the link */
+    color: inherit;
+    /* Inherits text color from parent */
+    display: block;
+    /* Makes the link take full width of the card */
+    width: 1200px;
+    /* Max width for the card example */
+    max-width: 90%;
+    /* Responsive max width */
+    margin: 20px;
+}
+
+.card-tn {
+    display: flex;
+    /* Enables Flexbox for side-by-side layout */
+    border-radius: 8px;
+    /* Slightly rounded corners */
+    overflow: hidden;
+    /* Ensures content stays within rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    background-color: #fff;
+    /* White background */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Smooth transition for hover effects */
+}
+
+.card-tn-link:hover .card-tn {
+    transform: translateY(-5px);
+    /* Lifts the card slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* More prominent shadow on hover */
+    cursor: pointer;
+    /* Changes mouse cursor to a pointer */
+}
+
+.card-tn-image {
+    flex: 1;
+    /* Takes 50% of the width */
+    min-width: 0;
+    /* Prevents image from overflowing in some cases */
+}
+
+.card-tn-image img {
+    width: 100%;
+    /* Image fills its container */
+    height: 100%;
+    /* Image fills its container */
+    object-fit: cover;
+    /* Ensures image covers the area without distortion */
+    display: block;
+    /* Removes extra space below image */
+}
+
+.card-tn-content {
+    flex: 1;
+    /* Takes 50% of the width */
+    padding: 20px;
+    /* Spacing inside the content area */
+    display: flex;
+    flex-direction: column;
+    /* --- REMOVED: justify-content: center; --- */
+    text-align: left;
+    /* Ensures text is aligned to the left */
+}
+
+.card-tn-content h2 {
+    font-size: 1.8em;
+    /* Larger heading */
+    margin-top: 0;
+    margin-bottom: 10px;
+    /* Space below heading */
+    color: #333;
+    text-align: left;
+    /* Explicitly align heading left */
+}
+
+.card-tn-content p {
+    font-size: 1em;
+    /* Standard paragraph size */
+    line-height: 1.6;
+    /* Comfortable line spacing */
+    color: #666;
+    text-align: left;
+    /* Explicitly align paragraph left */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-tn {
+        flex-direction: column;
+        /* Stacks image and text vertically on smaller screens */
+    }
+
+    .card-tn-image,
+    .card-tn-content {
+        flex: none;
+        /* Removes flex growth */
+        width: 100%;
+        /* Takes full width */
+    }
+
+    .card-tn-image {
+        height: 200px;
+        /* Fixed height for image on mobile */
+    }
+
+    .card-tn-content {
+        text-align: left;
+        /* Ensure left alignment on mobile too */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-tn-content {
+        padding: 15px;
+        /* Slightly less padding on very small screens */
+    }
+
+    .card-tn-content h2 {
+        font-size: 1.5em;
+    }
+
+    .card-tn-content p {
+        font-size: 0.9em;
+    }
+}
+
+/* Tài Nguyên Trung Tâm */
+/* Trang Chủ */
+/* n1 */
+/* Thiết lập chung */
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    /* Hoặc font chữ khác bạn muốn dùng */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+.main1-header {
+    background-color: #ff69b4;
+    /* Màu hồng */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.main1-header h1 {
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.main1-header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.center-center {
+    display: flex;
+    /* Sử dụng flexbox để quản lý bố cục tổng thể */
+    gap: 20px;
+    /* Khoảng cách giữa ảnh và văn bản */
+    align-items: flex-start;
+    /* Căn trên cùng các mục trong container */
+    background-color: #f8f8f8;
+    padding-bottom: 50px;
+}
+
+.image-stack {
+    position: relative;
+    /* Quan trọng: Thiết lập bối cảnh định vị cho các ảnh con */
+    width: 300px;
+    /* Chiều rộng cho khu vực chứa ảnh */
+    height: 350px;
+    /* Chiều cao cho khu vực chứa ảnh */
+    flex-shrink: 0;
+    /* Ngăn không cho khu vực ảnh bị co lại */
+}
+
+.image-stack img {
+    position: absolute;
+    /* Định vị tuyệt đối để chồng các ảnh lên nhau */
+    width: 300px;
+    /* Chiều rộng mong muốn của ảnh */
+    height: auto;
+    /* Giữ tỷ lệ khung hình */
+    border-radius: 8px;
+    /* Bo viền ảnh */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    /* Thêm bóng đổ cho đẹp */
+}
+
+.image-stack .image-1 {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    /* Ảnh 1 nằm trên Ảnh 2 */
+}
+
+.image-stack .image-2 {
+    top: 5px;
+    /* Dịch xuống 50px so với ảnh 1 */
+    left: 5px;
+    /* Dịch sang phải 50px so với ảnh 1 */
+    z-index: 1;
+    /* Ảnh 2 nằm dưới Ảnh 1 */
+}
+
+/* Top Section styles */
+.top-section {
+    background-color: #ff69b4;
+    /* Màu hồng tương tự header */
+    padding-bottom: 90px;
+}
+
+.top-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* Khoảng cách giữa các card */
+    padding-top: 20px;
+    /* Khoảng cách từ header xuống các card */
+    flex-wrap: wrap;
+    /* Cho phép các card xuống dòng trên màn hình nhỏ */
+}
+
+.main1-header {
+    text-align: center;
+    padding: 20px 0;
+    /* Khoảng cách trên và dưới */
+}
+
+.main1-header h1 {
+    font-size: 2em;
+    color: #FFF;
+    /* Main title color */
+    margin: 0;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    /* Bolder font for the main title */
+}
+
+.main1-header h2 {
+    font-size: 2.5em;
+    color: #FFF;
+    /* Main title color */
+    margin: 0;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    /* Bolder font for the main title */
+}
+
+
+.card {
+    width: 350px;
+    /* Chiều rộng cố định của card */
+    height: 300px;
+    /* Chiều cao cố định của card */
+    overflow: hidden;
+    /* Quan trọng: để ẩn đi phần ảnh bị tràn nếu dùng border-radius trên card */
+    /* Các thuộc tính khác của card như border, box-shadow, padding... */
+}
+
+.card img {
+    width: 100%;
+    /* Ảnh chiếm toàn bộ chiều rộng của card */
+    height: 100%;
+    /* Ảnh chiếm toàn bộ chiều cao của card */
+    object-fit: contain;
+    /* Hoặc 'contain' */
+    background-color: white;
+    border-radius: 20px;
+    /* Bo góc cho card */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    /* Bo góc cho ảnh bên trong card */
+    object-fit: cover;
+    /* Đảm bảo ảnh vừa vặn và không bị méo */
+    text-align: center;
+    padding: 5px;
+
+}
+
+
+
+.card.center-card {
+    width: 400px;
+    /* Card giữa có thể lớn hơn một chút */
+    padding: 30px;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*Để text luôn ở dưới ảnh */
+    border-radius: 15px;
+    /* Bo góc cho ảnh bên trong card */
+}
+
+.card h3 {
+    color: #ff69b4;
+    /* // Màu hồng cho tiêu đề card  */
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #ff69b4;
+}
+
+/* Bottom Section styles */
+.bottom-section {
+    background-color: white;
+    /* Nền trắng */
+    padding: 50px 0;
+}
+
+.bottom-section h2 {
+    text-align: center;
+    color: #ff69b4;
+    /* Màu hồng cho tiêu đề */
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.bottom-section .bold-title {
+    font-weight: bold;
+    font-size: 2.5em;
+    /* Lớn hơn một chút */
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.intro-section {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    /* Căn trên cùng */
+    margin-top: 30px;
+    flex-wrap: wrap;
+    /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+.intro-text {
+    flex: 2;
+    /* Chiếm nhiều không gian hơn */
+}
+
+.intro-text h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.intro-text p {
+    color: #555;
+    line-height: 1.8;
+}
+
+.intro-image {
+    flex: 1;
+    /* Chiếm ít không gian hơn */
+    text-align: right;
+    /* Căn phải ảnh */
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Bo góc cho ảnh giới thiệu */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .top-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card,
+    .card.center-card {
+        width: 80%;
+        /* Giảm chiều rộng trên màn hình nhỏ hơn */
+        max-width: 400px;
+        /* Giới hạn chiều rộng tối đa */
+    }
+
+    .intro-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-text,
+    .intro-image {
+        flex: auto;
+        width: 100%;
+        text-align: center;
+        /* Căn giữa trên màn hình nhỏ */
+    }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .bottom-section h2 {
+        font-size: 1.8em;
+    }
+
+    .bottom-section .bold-title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .top-cards,
+    .intro-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .card,
+    .card.center-card {
+        padding: 15px;
+    }
+
+    .bottom-section {
+        padding: 30px 0;
+    }
+}
+
+/* Trang Chủ */
+/* Tài Liệu Tham Khảo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Tài Liệu Tham Khảo */
